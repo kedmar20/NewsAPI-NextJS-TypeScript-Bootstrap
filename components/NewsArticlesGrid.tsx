@@ -21,9 +21,3 @@ const NewsArticlesGrid = ({ articles }: NewsArticlesGridProps) => {
 };
 
 export default NewsArticlesGrid;
-
-// type TranslatorScreenProps = {
-//    languages: Array<Language>;
-//    // onClick(): void
-// };
-//
