@@ -3,11 +3,11 @@ export interface NewsArticle {
    title: string;
    description: string;
    url: string;
-   image_url?: string | undefined;
+   urlToImage?: string;
    news_site: string;
-   summary: string;
+   content: string;
 }
 
 export interface NewsResponse {
-   results: NewsArticle[];
+   articles: NewsArticle[];
 }

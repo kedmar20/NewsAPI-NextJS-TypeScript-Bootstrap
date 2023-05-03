@@ -9,23 +9,23 @@ interface SpaceFlightNewsPageProps {
 }
 
 export const getServerSideProps: GetServerSideProps<SpaceFlightNewsPageProps> = async () => {
-   const response = await fetch("https://api.spaceflightnewsapi.net/v4/articles/");
+   const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=" + process.env.NEWS_API_KEY);
+
    const newsResponse: NewsResponse = await response.json();
-   console.log(newsResponse);
    return {
-      props: { newsArticles: newsResponse.results },
+      props: { newsArticles: newsResponse.articles },
    };
 };
 
 export default function BreakingNewsPage({ newsArticles }: SpaceFlightNewsPageProps) {
-   console.log(newsArticles);
+   // console.log(newsArticles);
    return (
       <>
          <Head>
-            <title key="title">Space Flight News - NextJS + TypeScript + Bootstrap</title>
+            <title key="title">Breaking News - NextJS + TypeScript + Bootstrap</title>
          </Head>
          <main>
-            <h1>Space Flight News</h1>
+            <h1>Breaking News</h1>
             <Alert>
                This page uses <strong>getServerSideProps</strong> to fetch data server-side on every request. This allows search engines to crawl the
                page content and <strong>improves SEO</strong>.

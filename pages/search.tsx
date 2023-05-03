@@ -19,9 +19,9 @@ const SearchNewsPage = () => {
             setSearchResults(null);
             setSearchResultsLoadingIsError(false);
             setSearchResultsLoading(true);
-            const response = await fetch("/api/search-news?q=" + searchQuery);
+            const response = await fetch("/api/search-news?contain_one=" + searchQuery);
             const articles: NewsArticle[] = await response.json();
-            console.log(articles);
+            // console.log(articles);
             setSearchResults(articles);
          } catch (error) {
             console.error(error);
@@ -45,8 +45,8 @@ const SearchNewsPage = () => {
             </Alert>
             <Form onSubmit={handleSubmit}>
                <Form.Group className="mb-3" controlId="search-input">
-                  <Form.Label>Search The Space News</Form.Label>
-                  <Form.Control name="searchQuery" placeholder="e.g. nasa, spacex, falcon ..." />
+                  <Form.Label>Search The News</Form.Label>
+                  <Form.Control name="searchQuery" placeholder="write something..." />
                </Form.Group>
                <Button type="submit" className="mb-3" disabled={searchResultsLoading}>
                   Search

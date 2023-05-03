@@ -8,8 +8,8 @@ interface NewsArticleEntryProps {
    article: NewsArticle;
 }
 
-const NewsArticleEntry = ({ article: { title, summary, url, image_url } }: NewsArticleEntryProps) => {
-   const validImageUrl = image_url?.startsWith("http://") || image_url?.startsWith("https://") ? image_url : "";
+const NewsArticleEntry = ({ article: { title, content, url, urlToImage } }: NewsArticleEntryProps) => {
+   const validImageUrl = urlToImage?.startsWith("http://") || urlToImage?.startsWith("https://") ? urlToImage : "";
 
    return (
       <a href={url}>
@@ -17,7 +17,7 @@ const NewsArticleEntry = ({ article: { title, summary, url, image_url } }: NewsA
             <Image src={validImageUrl} width={500} height={200} alt="News article image" className={`card-img-top ${styles.image}`} />
             <Card.Body>
                <Card.Title>{title}</Card.Title>
-               <Card.Text>{summary}</Card.Text>
+               <Card.Text>{content}</Card.Text>
             </Card.Body>
          </Card>
       </a>
