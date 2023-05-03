@@ -16,7 +16,7 @@ const SearchNewsPage = () => {
 
       if (searchQuery) {
          try {
-            setSearchResults(null);
+            setSearchResults(null); //that means we execute new search and the previous ones will be removed
             setSearchResultsLoadingIsError(false);
             setSearchResultsLoading(true);
             const response = await fetch("/api/search-news?contain_one=" + searchQuery);
@@ -53,7 +53,7 @@ const SearchNewsPage = () => {
                </Button>
             </Form>
             <div className="d-flex flex-column align-items-center">
-               {searchResultsLoading && <Spinner animation="border" />}
+               {searchResultsLoading && <Spinner animation="border" /> /*Spinner is from Bootstrap*/}
                {searchResultsLoadingIsError && <p>Something went wrong. Please try again.</p>}
                {searchResults?.length === 0 && <p>Nothing found. Try a different query!</p>}
                {searchResults && <NewsArticlesGrid articles={searchResults} />}
