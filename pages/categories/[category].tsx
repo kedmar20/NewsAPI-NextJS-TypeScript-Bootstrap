@@ -26,6 +26,7 @@ export const getStaticProps: GetStaticProps<CategoryNewsPageProps> = async ({ pa
    const newsResponse: NewsResponse = await response.json();
    return {
       props: { newsArticles: newsResponse.articles },
+      revalidate: 5 * 60,
    };
 };
 
@@ -43,8 +44,8 @@ const CategoryNewsPage = ({ newsArticles }: CategoryNewsPageProps) => {
          <main>
             <h1>{title}</h1>
             <Alert>
-               This is page uses <strong>getStaticProps</strong> for very high page loading speed and <strong>incremental static regeneration</strong>{" "}
-               to show data not older than <strong>5 minutes</strong>.
+               Diese Seite nutzt <strong>"getStaticProps"</strong> für sehr hohe Seitenladegeschwindigkeit und
+               <strong>"Incremental Static Regeneration"</strong> um Daten anzuzeigen, die nicht älter sind als <strong>5 Minuten.</strong>.
             </Alert>
             <NewsArticlesGrid articles={newsArticles} />
          </main>

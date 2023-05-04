@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
    const searchQuery = req.query.contain_one?.toString();
 
    if (!searchQuery) {
-      return res.status(400).json({ error: "Please provide a search query" });
+      return res.status(400).json({ error: "Bitte geben Sie eine Suchanfrage ein" });
    }
 
    const response = await fetch(`https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${process.env.NEWS_API_KEY}`);

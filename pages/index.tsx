@@ -2,7 +2,6 @@ import NewsArticlesGrid from "@/components/NewsArticlesGrid";
 import { NewsArticle, NewsResponse } from "@/models/NewsArticles";
 import { GetServerSideProps } from "next";
 import Head from "next/head"; //default from next
-import { Alert } from "react-bootstrap";
 
 interface SpaceFlightNewsPageProps {
    newsArticles: NewsArticle[];
@@ -22,14 +21,11 @@ export default function BreakingNewsPage({ newsArticles }: SpaceFlightNewsPagePr
    return (
       <>
          <Head>
-            <title key="title">Breaking News - NextJS + TypeScript + Bootstrap</title>
+            <title key="title">Schlagzeilen aus aller Welt - NextJS + TypeScript + Bootstrap</title>
          </Head>
          <main>
-            <h1>Breaking News</h1>
-            <Alert>
-               This page uses <strong>getServerSideProps</strong> to fetch data server-side on every request. This allows search engines to crawl the
-               page content and <strong>improves SEO</strong>.
-            </Alert>
+            <h1>Schlagzeilen aus aller Welt</h1>
+
             <NewsArticlesGrid articles={newsArticles} />
          </main>
       </>

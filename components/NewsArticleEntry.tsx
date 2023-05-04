@@ -1,7 +1,7 @@
 import { NewsArticle } from "@/models/NewsArticles";
 import Image from "next/image";
 import { Card } from "react-bootstrap";
-// import placeholderImage from "@/assets/images/newsarticle_placeholder.jpg";
+import placeholderImage from "@/assets/images/placeholder_images.jpg";
 import styles from "@/styles/NewsArticleEntry.module.css";
 
 interface NewsArticleEntryProps {
@@ -14,7 +14,13 @@ const NewsArticleEntry = ({ article: { title, content, url, urlToImage } }: News
    return (
       <a href={url}>
          <Card className="h-100">
-            <Image src={validImageUrl} width={500} height={200} alt="News article image" className={`card-img-top ${styles.image}`} />
+            <Image
+               src={validImageUrl || placeholderImage}
+               width={500}
+               height={200}
+               alt="News article image"
+               className={`card-img-top ${styles.image}`}
+            />
             <Card.Body>
                <Card.Title>{title}</Card.Title>
                <Card.Text>{content}</Card.Text>
@@ -27,3 +33,4 @@ const NewsArticleEntry = ({ article: { title, content, url, urlToImage } }: News
 export default NewsArticleEntry;
 
 //    src={validImageUrl || placeholderImage}
+// placeholder_images.jpg;
