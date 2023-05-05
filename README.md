@@ -1,5 +1,19 @@
-NextJS + TypeScript + Bootstrap + NewsAPI
-deployment: Vercel
+## NewsAPI - This is an application showing the latest news from around the world.
+### deployment on Vercel: https://newsapi-nextjs-typescript-bootstrap.vercel.app/
+
+# NextJS + TypeScript + Bootstrap
+
+## here's what's inside:
+- NextJS
+- TypeScript
+- Bootstrap
+- SSG Static Side Generation ( 'getStaticProps' - page: /[category](https://newsapi-nextjs-typescript-bootstrap.vercel.app/categories/science))
+- ISR Incremental Static Regeneration ('revalidate' - page: /[category](https://newsapi-nextjs-typescript-bootstrap.vercel.app/categories/technology))
+- SSR Server Side Rendering ('getServerSideProps' - page: /[home](https://newsapi-nextjs-typescript-bootstrap.vercel.app/))
+- Client-side Fetching ( page: /[search](https://newsapi-nextjs-typescript-bootstrap.vercel.app/search))
+
+
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
