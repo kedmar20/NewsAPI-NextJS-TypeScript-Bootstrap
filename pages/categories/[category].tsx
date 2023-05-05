@@ -48,11 +48,12 @@ const CategoryNewsPage = ({ newsArticles }: CategoryNewsPageProps) => {
                <p>
                   <strong>SSG ( Static Side Generation ) & ISR ( Incremental Static Regeneration )</strong>
                </p>
-               Diese Seite nutzt <strong>"getStaticProps"</strong>. Eine Methode, die die Next-Komponente anweist, die Props aufzufüllen und zur
-               Build-Time in eine statische HTML-Seite gerendert werden. Dadurch ist diese Seite optimiert für SEO and für sehr schnell page loading.
+               Diese Seite nutzt <strong>&quot;getStaticProps&quot;</strong>. Eine Methode, die die Next-Komponente anweist, die Props aufzufüllen und
+               zur Build-Time in eine statische HTML-Seite gerendert werden. Dadurch ist diese Seite optimiert für SEO and für sehr schnell page
+               loading.
                <p></p>
                <p>
-                  Zusätzlich haben wir hier<strong>"Incremental Static Regeneration"</strong> angewendet.
+                  Zusätzlich haben wir hier<strong>&quot;Incremental Static Regeneration&quot;</strong> angewendet.
                </p>
                <p>
                   Dadurch können wir nur diese Seite aktualisieren - ohne die gesamte Website wieder aufbauen zu müssen. Alle 5 Minuten Next.js löst

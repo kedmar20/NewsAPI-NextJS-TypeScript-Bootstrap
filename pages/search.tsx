@@ -45,9 +45,9 @@ const SearchNewsPage = () => {
                      <h1>Suche die Nachrichten</h1>
                   </Form.Label>
                   <Alert className={`${styles.alert}`}>
-                     Diese Seite nutzt <strong>"Client-side Fetching"</strong> um für jede Suche aktuelle Daten anzuzeigen.
+                     Diese Seite nutzt <strong>&quot;Client-side Fetching&quot;</strong> um für jede Suche aktuelle Daten anzuzeigen.
                      <p>
-                        Anfragen werden von unserem Backend über <strong> "API routes"</strong> verarbeitet.
+                        Anfragen werden von unserem Backend über <strong> &quot;API routes&quot;</strong> verarbeitet.
                      </p>
                   </Alert>
                   <Form.Control name="searchQuery" placeholder="z.B. Mercedes, SpaceX, Steuern..." />
