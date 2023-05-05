@@ -1,16 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import logo from "@/assets/images/breaking_news.png";
+import styles from "@/styles/NewsArticleEntry.module.css";
 
 const NavBar = () => {
    return (
-      <Navbar bg="dark" variant="dark" sticky="top" expand="sm" collapseOnSelect>
+      // <Navbar sticky="top" className={`${styles.navbar}`}>
+      <Navbar variant="dark" sticky="top" expand="lg" collapseOnSelect className={`${styles.navbar}`}>
          <Container>
             <Navbar.Toggle aria-controls="main-navbar" />
             <Navbar.Collapse id="main-navbar">
-               <Nav>
+               <Nav className={`justify-content-start align-items-center flex-grow-1 pe-3 ${styles.navbar}`}>
                   <Nav.Link as={Link} href="/">
-                     Breaking
+                     <Image src={logo} width={150} alt="logo" />
                   </Nav.Link>
+
                   <Nav.Link as={Link} href="/search">
                      Search
                   </Nav.Link>
@@ -45,3 +50,7 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+// className = "d-inline-block align-top";
+
+// id = "categories-dropdown";

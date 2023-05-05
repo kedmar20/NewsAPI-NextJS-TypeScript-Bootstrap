@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Alert } from "react-bootstrap";
+import styles from "@/styles/NewsArticleEntry.module.css";
 
 interface CategoryNewsPageProps {
    newsArticles: NewsArticle[];
@@ -43,9 +44,12 @@ const CategoryNewsPage = ({ newsArticles }: CategoryNewsPageProps) => {
          </Head>
          <main>
             <h1>{title}</h1>
-            <Alert>
+            <Alert className={`${styles.alert}`}>
                Diese Seite nutzt <strong>"getStaticProps"</strong> für sehr hohe Seitenladegeschwindigkeit und
-               <strong>"Incremental Static Regeneration"</strong> um Daten anzuzeigen, die nicht älter sind als <strong>5 Minuten.</strong>.
+               <strong> "Incremental Static Regeneration"</strong>{" "}
+               <p>
+                  um Daten anzuzeigen, die nicht älter sind als <strong>5 Minuten.</strong>.
+               </p>
             </Alert>
             <NewsArticlesGrid articles={newsArticles} />
          </main>
