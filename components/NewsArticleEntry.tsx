@@ -21,7 +21,7 @@ const NewsArticleEntry = ({ article: { title, content, url, urlToImage } }: News
                alt="News article image"
                className={`card-img-top ${styles.image}`}
             />
-            <Card.Body>
+            <Card.Body className={`card-img-top ${styles.image}`}>
                <Card.Title>{title}</Card.Title>
                <Card.Text>{content}</Card.Text>
             </Card.Body>

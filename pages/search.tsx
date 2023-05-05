@@ -2,7 +2,8 @@ import NewsArticlesGrid from "@/components/NewsArticlesGrid";
 import { NewsArticle } from "@/models/NewsArticles";
 import Head from "next/head";
 import { FormEvent, useState } from "react";
-import { Button, Form, Spinner } from "react-bootstrap";
+import { Button, Form, Spinner, Alert } from "react-bootstrap";
+import styles from "@/styles/NewsArticleEntry.module.css";
 
 const SearchNewsPage = () => {
    const [searchResults, setSearchResults] = useState<NewsArticle[] | null>(null);
@@ -40,10 +41,18 @@ const SearchNewsPage = () => {
          <main>
             <Form onSubmit={handleSubmit}>
                <Form.Group className="mb-3" controlId="search-input">
-                  <Form.Label>Suche die Nachrichten</Form.Label>
+                  <Form.Label>
+                     <h1>Suche die Nachrichten</h1>
+                  </Form.Label>
+                  <Alert className={`${styles.alert}`}>
+                     Diese Seite nutzt <strong>"client-side data fetching"</strong> to show fresh data for every search.
+                     <p>
+                        Requests are handled by our backend via<strong> "API routes"</strong>.
+                     </p>
+                  </Alert>
                   <Form.Control name="searchQuery" placeholder="z.B. Mercedes, SpaceX, Steuern..." />
                </Form.Group>
-               <Button type="submit" className="mb-3" disabled={searchResultsLoading}>
+               <Button type="submit" className={`mb-3 ${styles.button} `} disabled={searchResultsLoading}>
                   Search
                </Button>
             </Form>
