@@ -45,10 +45,19 @@ const CategoryNewsPage = ({ newsArticles }: CategoryNewsPageProps) => {
          <main>
             <h1>{title}</h1>
             <Alert className={`${styles.alert}`}>
-               Diese Seite nutzt <strong>"getStaticProps"</strong> für sehr hohe Seitenladegeschwindigkeit und
-               <strong> "Incremental Static Regeneration"</strong>{" "}
                <p>
-                  um Daten anzuzeigen, die nicht älter sind als <strong>5 Minuten.</strong>.
+                  <strong>SSG ( Static Side Generation ) & ISR ( Incremental Static Regeneration )</strong>
+               </p>
+               Diese Seite nutzt <strong>"getStaticProps"</strong>. Eine Methode, die die Next-Komponente anweist, die Props aufzufüllen und zur
+               Build-Time in eine statische HTML-Seite gerendert werden. Dadurch ist diese Seite optimiert für SEO and für sehr schnell page loading.
+               <p></p>
+               <p>
+                  Zusätzlich haben wir hier<strong>"Incremental Static Regeneration"</strong> angewendet.
+               </p>
+               <p>
+                  Dadurch können wir nur diese Seite aktualisieren - ohne die gesamte Website wieder aufbauen zu müssen. Alle 5 Minuten Next.js löst
+                  im Backend eine Neugenerierung der Seite aus. Sobald die Seite erfolgreich generiert wurde, macht Next.js den Cache ungültig und
+                  zeigt die aktualisierte Seite an. Wenn die Regenerierung im Backend fehlschlägt, bleibt die alte Seite unverändert.
                </p>
             </Alert>
             <NewsArticlesGrid articles={newsArticles} />

@@ -28,6 +28,10 @@
    font-family: "Montserrat", sans-serif;
    padding: 2vw 8vw;
    text-align: center;
-   line-height: 2;
+   line-height: 1.2;
    margin: 2vw 0;
+}
+
+.alert p {
+   margin: 5px;
 }

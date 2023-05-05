@@ -28,10 +28,18 @@ export default function BreakingNewsPage({ newsArticles }: SpaceFlightNewsPagePr
          <main>
             <h1>Schlagzeilen aus aller Welt</h1>
             <Alert className={`${styles.alert}`}>
-               Diese Seite nutzt <strong>"getServerSideProps"</strong> to fetch data server-side on every request.{" "}
                <p>
-                  This allows search engines to crawl the page content and
-                  <strong> improves SEO</strong>.
+                  <strong>SSR ( Server Side Rendering )</strong>
+               </p>
+               <p>
+                  Diese Seite nutzt <strong>"getServerSideProps"</strong>. Eine Methode, die die Next-Komponente anweist, die Props aufzufüllen und
+                  zur Runtime in eine statische HTML-Seite zu rendern. Dies bedeutet, dass die Seite live ist und mit React-Komponenten gehostet wird,
+                  die auf dem Server sitzen und auf eine Anfrage warten.
+               </p>
+               <p>
+                  Wenn jedoch eine Anfrage gestellt wird, sendet der Server die <strong>Javascript-React-Dateien nicht</strong> zum Rendern an den
+                  Client. Stattdessen weist NextJs React an, diese Komponenten in Echtzeit in HTML zu rendern und <strong>dann den HTML-Code</strong>{" "}
+                  an den Client zu senden.
                </p>
             </Alert>
             <NewsArticlesGrid articles={newsArticles} />
