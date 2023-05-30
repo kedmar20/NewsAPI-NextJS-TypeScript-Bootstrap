@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps<CategoryNewsPageProps> = async ({ pa
    const newsResponse: NewsResponse = await response.json();
    return {
       props: { newsArticles: newsResponse.articles },
-      revalidate: 5 * 60,
+      // revalidate: 5 * 60,
    };
 };
 
